@@ -34,6 +34,7 @@ public class ExtractObjectRightClass
     public void setInfoEnk(String infoEnk) {
         this.infoEnk = infoEnk;
     }
+    
 
     @XmlElement(name = "InfoPIK")
     public String getInfoPik() {
