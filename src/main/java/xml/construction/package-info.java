@@ -13,8 +13,16 @@
                 @XmlNs(prefix="ch", namespaceURI="urn://x-artefacts-rosreestr-ru/commons/complex-types/cultural-heritage/2.0.1")
         }
 )
+@XmlJavaTypeAdapters({
+        @XmlJavaTypeAdapter(type = LocalDateTime.class, value = ClassicDateAdapter.class)
+})
 package xml.construction;
+
+import utilities.ClassicDateAdapter;
 
 import javax.xml.bind.annotation.XmlNs;
 import javax.xml.bind.annotation.XmlNsForm;
 import javax.xml.bind.annotation.XmlSchema;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters;
+import java.time.LocalDateTime;

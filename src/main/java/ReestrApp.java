@@ -1,4 +1,5 @@
 
+import hibernate.factory.Factory;
 import hibernate.initialize.DatabaseConnectionTask;
 import hibernate.initialize.DatabaseExecutorStorage;
 import javafx.application.Application;
@@ -65,9 +66,14 @@ public class ReestrApp extends Application
             //logger.info("reader: " + reader);
             //StringReader stringReader = new StringReader(xmlString);
             //logger.info("stringReader: " + stringReader);
-            KvokClass kvokClass = (KvokClass) unmarshaller.unmarshal(inputStream);
-            logger.info("getCadastralNumber: " + kvokClass.getReestrExtractClass().getExtractObjectRightClass().getFootContentClass().getExtractDate());
+            KvokClass kvokClassObject = (KvokClass) unmarshaller.unmarshal(inputStream);
+            logger.info("getCadastralNumber: " + kvokClassObject.getRealtyClass().getConstructionClass().getDateCreated());
 
+            if(kvokClassObject != null)
+            {
+                String entSys = kvokClassObject.getRealtyClass().getConstructionClass().getEntitySpatialClass().getEntSys();
+                Factory.getInstance().getEntitySpatialDao().insertEntitySpatial(entSys);
+            }
 
         }
         catch (Exception e)

@@ -1,9 +1,13 @@
 package xml.construction;
 
+import utilities.ClassicDateAdapter;
 import xml.address.AddressClass;
 import xml.entity_spatial.EntitySpatialClass;
 
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +24,7 @@ public class ConstructionClass
 {
     private String cadastralNumber;
     private String state;
-    private String dateCreated;
+    private LocalDate dateCreated;
 
     private List<String> cadastralBlockList = new ArrayList<String>();
     private String objectType;
@@ -54,12 +58,13 @@ public class ConstructionClass
         this.state = state;
     }
 
-    @XmlAttribute(name = "DateCreated")
-    public String getDateCreated() {
+    @XmlAttribute(name = "DateCreated", required=true)
+    @XmlJavaTypeAdapter(value = ClassicDateAdapter.class)
+    public LocalDate getDateCreated() {
         return dateCreated;
     }
 
-    public void setDateCreated(String dateCreated) {
+    public void setDateCreated(LocalDate dateCreated) {
         this.dateCreated = dateCreated;
     }
 
