@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="https://portal.rosreestr.ru/xsl/EGRP/Reestr_Extract_Big/OKS/07/Common.xsl"?>
+<KVOKS xmlns="urn://x-artefacts-rosreestr-ru/outgoing/kvoks/3.0.1"
+xmlns:smev="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1"
+xmlns:num="urn://x-artefacts-rosreestr-ru/commons/complex-types/numbers/1.0"
+xmlns:adrs="urn://x-artefacts-rosreestr-ru/commons/complex-types/address-output/4.0.1"
+xmlns:spa="urn://x-artefacts-rosreestr-ru/commons/complex-types/entity-spatial/5.0.1"
+xmlns:param="urn://x-artefacts-rosreestr-ru/commons/complex-types/parameters-oks/2.0.1"
+xmlns:cer="urn://x-artefacts-rosreestr-ru/commons/complex-types/certification-doc/1.0"
+xmlns:doc="urn://x-artefacts-rosreestr-ru/commons/complex-types/document-output/4.0.1"
+xmlns:ch="urn://x-artefacts-rosreestr-ru/commons/complex-types/cultural-heritage/2.0.1">
+<Realty>
+	<Construction CadastralNumber="05:42:000000:25494" State="06" DateCreated="2014-11-19">
+		<CadastralBlocks>
+			<CadastralBlock>05:42:000000</CadastralBlock>
+		</CadastralBlocks>
+		<ObjectType>002001004000</ObjectType>
+		<Name>ВЛ 110 кВ №123 п/ст Дербент Северная - п/ст Дербент Южная</Name>
+		<AssignationName>1.1. сооружения электроэнергетики</AssignationName>
+		<ExploitationChar YearBuilt="1974" />
+		<KeyParameters>
+			<param:KeyParameter Type="01" Value="1021" />
+		</KeyParameters>
+		<Address>
+			<adrs:OKATO>82410000000</adrs:OKATO>
+			<adrs:KLADR>0500000600000</adrs:KLADR>
+			<adrs:Region>05</adrs:Region>
+			<adrs:City Name="Дербент" Type="г" />
+			<adrs:Note>Республика Дагестан, г. Дербент</adrs:Note>
+		</Address>
+		<EntitySpatial EntSys="ID1" >
+			<spa:SpatialElement >
+				<spa:SpelementUnit TypeUnit="Окружность" SuNmb="1" >
+					<spa:Ordinate X="117814.65" Y="415246.36" OrdNmb="1" DeltaGeopoint="0.1" />
+				</spa:SpelementUnit>
+			</spa:SpatialElement>
+			<spa:SpatialElement >
+				<spa:SpelementUnit TypeUnit="Окружность" SuNmb="1" >
+					<spa:Ordinate X="117663" Y="415367.26" OrdNmb="1" DeltaGeopoint="0.1" />
+				</spa:SpelementUnit>
+			</spa:SpatialElement>
+			<spa:SpatialElement ><spa:SpelementUnit TypeUnit="Окружность" SuNmb="1" ><spa:Ordinate X="117523.8" Y="415490.28" OrdNmb="1" DeltaGeopoint="0.1" /></spa:SpelementUnit></spa:SpatialElement><spa:SpatialElement ><spa:SpelementUnit TypeUnit="Окружность" SuNmb="1" ><spa:Ordinate X="117162.7" Y="415733.14" OrdNmb="1" DeltaGeopoint="0.1" /></spa:SpelementUnit></spa:SpatialElement><spa:SpatialElement ><spa:SpelementUnit TypeUnit="Точка" SuNmb="1" ><spa:Ordinate X="117945.26" Y="415091.12" OrdNmb="1" DeltaGeopoint="0.1" /></spa:SpelementUnit><spa:SpelementUnit TypeUnit="Точка" SuNmb="2" ><spa:Ordinate X="117944.08" Y="415093.05" OrdNmb="1" DeltaGeopoint="0.1" /></spa:SpelementUnit><spa:SpelementUnit TypeUnit="Точка" SuNmb="3" ><spa:Ordinate X="117942.14" Y="415091.88" OrdNmb="1" DeltaGeopoint="0.1" /></spa:SpelementUnit><spa:SpelementUnit TypeUnit="Точка" SuNmb="4" ><spa:Ordinate X="117943.32" Y="415089.95" OrdNmb="1" DeltaGeopoint="0.1" /></spa:SpelementUnit><spa:SpelementUnit TypeUnit="Точка" SuNmb="1" ><spa:Ordinate X="117945.26" Y="415091.12" OrdNmb="1" DeltaGeopoint="0.1" /></spa:SpelementUnit></spa:SpatialElement><spa:SpatialElement ><spa:SpelementUnit TypeUnit="Точка" SuNmb="1" ><spa:Ordinate X="117339.31" Y="415573.19" OrdNmb="1" DeltaGeopoint="0.1" /></spa:SpelementUnit><spa:SpelementUnit TypeUnit="Точка" SuNmb="2" ><spa:Ordinate X="117341.06" Y="415575.07" OrdNmb="1" DeltaGeopoint="0.1" /></spa:SpelementUnit><spa:SpelementUnit TypeUnit="Точка" SuNmb="3" ><spa:Ordinate X="117339.15" Y="415576.77" OrdNmb="1" DeltaGeopoint="0.1" /></spa:SpelementUnit><spa:SpelementUnit TypeUnit="Точка" SuNmb="4" ><spa:Ordinate X="117337.41" Y="415574.9" OrdNmb="1" DeltaGeopoint="0.1" /></spa:SpelementUnit><spa:SpelementUnit TypeUnit="Точка" SuNmb="1" ><spa:Ordinate X="117339.31" Y="415573.19" OrdNmb="1" DeltaGeopoint="0.1" /></spa:SpelementUnit></spa:SpatialElement>
+		</EntitySpatial>
+	</Construction>
+</Realty>
+<CertificationDoc>
+	<cer:Organization>ФГИС ЕГРН</cer:Organization>
+	<cer:Date>2019-03-06</cer:Date>
+	<cer:Number>99/2019/249170194</cer:Number>
+</CertificationDoc>
+<Contractors>
+	<Contractor>
+		<FamilyName>Пузиков</FamilyName>
+		<FirstName>Максим</FirstName>
+		<Patronymic>Павлович</Patronymic>
+		<NCertificate>26-12-398</NCertificate>
+		<Organization>
+			<Name>ООО &quot;Техноинжиниринг&quot;</Name>
+		</Organization>
+	</Contractor>
+</Contractors>
+<CoordSystems>
+	<spa:CoordSystem Name="МСК05" CsId="ID1" />
+	<spa:CoordSystem Name="МСК-05" CsId="ID0" />
+</CoordSystems>
+<eDocument CodeType="112" Version="07" Scope="GKN">
+	<Sender Kod="00.0.4.195" Name="ФГИС ЕГРН" Region="99" Date_Upload="2019-03-06" Appointment="Государственный регистратор" />
+	<Recipient Kod="00.0.4.111" Name="МИНИСТЕРСТВО ЭКОНОМИЧЕСКОГО РАЗВИТИЯ СТАВРОПОЛЬСКОГО КРАЯ" />
+</eDocument>
+<ReestrExtract>
+	<DeclarAttribute ID_KUVI="0" 
+					 ExtractTypeCode="012000" 
+					 ExtractTypeText="Выписка из Единого государственного реестра недвижимости об объекте недвижимости" 
+					 ExtractNumber="99/2019/249170194" 
+					 ExtractDate="06.03.2019" 
+					 RequeryNumber="80-78009910" 
+					 RequeryDate="06.03.2019" 
+					 ExtractCount="0" 
+					 NoticeCount="0" 
+					 RefuseCount="0" 
+					 Registrator="ФГИС ЕГРН">
+		<ReceivName>МИНИСТЕРСТВО ЭКОНОМИЧЕСКОГО РАЗВИТИЯ СТАВРОПОЛЬСКОГО КРАЯ</ReceivName>
+		<ReceivAdress>не указан</ReceivAdress>
+	</DeclarAttribute>
+	<ExtractObjectRight>
+		<HeadContent>
+			<ID_REC_KUVI>0</ID_REC_KUVI>
+			<Title>ФЕДЕРАЛЬНАЯ СЛУЖБА ГОСУДАРСТВЕННОЙ РЕГИСТРАЦИИ, КАДАСТРА И КАРТОГРАФИИ</Title>
+			<DeptName>ФГИС ЕГРН</DeptName>
+			<ExtractTitle>Выписка из Единого государственного реестра недвижимости об объекте недвижимости</ExtractTitle>
+			<Content>На основании запроса от 06.03.2019 г., поступившего на рассмотрение 06.03.2019 г., сообщаем, что согласно записям Единого государственного реестра недвижимости:</Content>
+		</HeadContent>
+		<InfoENK/><InfoPIK/>
+		<FootContent>
+			<Recipient>МИНИСТЕРСТВО ЭКОНОМИЧЕСКОГО РАЗВИТИЯ СТАВРОПОЛЬСКОГО КРАЯ</Recipient>
+			<ExtractDate>06.03.2019</ExtractDate>
+			<Content></Content>
+		</FootContent>
+	</ExtractObjectRight>
+</ReestrExtract>
+</KVOKS>

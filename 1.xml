@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="https://portal.rosreestr.ru/xsl/EGRP/Reestr_Extract_Big/ZU/07/Common.xsl"?>
+
+<KVZU xmlns="urn://x-artefacts-rosreestr-ru/outgoing/kvzu/7.0.1"
+xmlns:smev="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1"
+xmlns:num="urn://x-artefacts-rosreestr-ru/commons/complex-types/numbers/1.0"
+xmlns:adrs="urn://x-artefacts-rosreestr-ru/commons/complex-types/address-output/4.0.1"
+xmlns:spa="urn://x-artefacts-rosreestr-ru/commons/complex-types/entity-spatial/5.0.1"
+xmlns:cer="urn://x-artefacts-rosreestr-ru/commons/complex-types/certification-doc/1.0"
+xmlns:doc="urn://x-artefacts-rosreestr-ru/commons/complex-types/document-output/4.0.1"
+xmlns:nobj="urn://x-artefacts-rosreestr-ru/commons/complex-types/natural-objects-output/1.0.1">
+  <Parcels>
+    <Parcel CadastralNumber="05:42:000017:204" State="06" DateCreated="2014-01-13">
+      <CadastralBlock>05:42:000017</CadastralBlock>
+      <Name>01</Name>
+      <Area>
+        <Area>231137</Area>
+        <Unit>055</Unit>
+        <Inaccuracy>169</Inaccuracy>
+      </Area>
+      <Location>
+        <Address>
+          <adrs:OKATO>82410000000</adrs:OKATO>
+          <adrs:KLADR>0500000600000</adrs:KLADR>
+          <adrs:PostalCode>368607</adrs:PostalCode>
+          <adrs:Region>05</adrs:Region>
+          <adrs:City Name="Дербент" Type="г" />
+          <adrs:Note>Республика Дагестан, г Дербент</adrs:Note>
+        </Address>
+      </Location>
+      <Category>003002000000</Category>
+      <Utilization Utilization="142002020000" ByDoc="Для размещения объектов лечебно-оздоровительного назначения" />
+      <Rights>
+        <Right>
+          <Name>собственность муниципального образования</Name>
+          <Type>001001000000</Type>
+          <Owners>
+            <Owner>
+              <Organization>
+                <Name>Администрация муниципального образования городского округа &quot;город Дербент&quot; Республики Дагестан</Name>
+              </Organization>
+            </Owner>
+          </Owners>
+          <Registration>
+            <RegNumber>05:42:000017:204-05/001/2018-1</RegNumber>
+            <RegDate>2018-05-03</RegDate>
+          </Registration>
+        </Right>
+      </Rights>
+      <SubParcels>
+        <SubParcel NumberRecord="1" Full="0" State="06" >
+          <Area>
+            <Area>8537</Area>
+            <Unit>055</Unit>
+          </Area>
+          <Encumbrance>
+            <Type>022004000000</Type>
+            <AccountNumber>05.08.2.6</AccountNumber>
+            <Registration>
+              <RegDate>2017-06-06</RegDate>
+            </Registration>
+            <Document>
+              <doc:CodeDocument>558403010000</doc:CodeDocument>
+              <doc:Name>Свидетельство о государственной регистрации права</doc:Name>
+              <doc:Number>136900</doc:Number>
+              <doc:Date>2008-07-02</doc:Date>
+              <doc:IssueOrgan>Управление Федеральной регистрационной службы по Республике Дагестан</doc:IssueOrgan>
+            </Document>
+          </Encumbrance>
+          <EntitySpatial EntSys="ID1" >
+            <spa:SpatialElement >
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="492" >
+                <spa:Ordinate X="116819.22" Y="414515.86" OrdNmb="1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="493" >
+                <spa:Ordinate X="116800.02" Y="414509.22" OrdNmb="1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="95" >
+                <spa:Ordinate X="116763.51" Y="414516.94" OrdNmb="1" DeltaGeopoint="0.1" GeopointZacrep="Временный межевой знак" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="94" >
+                <spa:Ordinate X="116807.42" Y="414534.27" OrdNmb="1" DeltaGeopoint="0.1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="494" >
+                <spa:Ordinate X="116807.3" Y="414562.85" OrdNmb="1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="495" >
+                <spa:Ordinate X="116880.9" Y="414588.24" OrdNmb="1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="268" >
+                <spa:Ordinate X="116933.91" Y="414571.29" OrdNmb="1" DeltaGeopoint="0.1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="269" >
+                <spa:Ordinate X="116936.65" Y="414579.9" OrdNmb="1" DeltaGeopoint="0.1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="496" >
+                <spa:Ordinate X="116895.13" Y="414593.14" OrdNmb="1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="497" >
+                <spa:Ordinate X="116901.14" Y="414595.22" OrdNmb="1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="59" >
+                <spa:Ordinate X="116936.49" Y="414581.82" OrdNmb="1" DeltaGeopoint="0.1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="498" >
+                <spa:Ordinate X="116975.76" Y="414570" OrdNmb="1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="499" >
+                <spa:Ordinate X="116858.32" Y="414529.38" OrdNmb="1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="99" >
+                <spa:Ordinate X="116855.11" Y="414530.17" OrdNmb="1" DeltaGeopoint="0.1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="98" >
+                <spa:Ordinate X="116841.76" Y="414533.49" OrdNmb="1" DeltaGeopoint="0.1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="97" >
+                <spa:Ordinate X="116824.61" Y="414537.54" OrdNmb="1" DeltaGeopoint="0.1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="492" >
+                <spa:Ordinate X="116819.22" Y="414515.86" OrdNmb="1" />
+              </spa:SpelementUnit>
+            </spa:SpatialElement>
+            <spa:SpatialElement >
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="267" >
+                <spa:Ordinate X="116858.32" Y="414554.98" OrdNmb="1" DeltaGeopoint="0.1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="264" >
+                <spa:Ordinate X="116886.87" Y="414545.81" OrdNmb="1" DeltaGeopoint="0.1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="265" >
+                <spa:Ordinate X="116892.99" Y="414564.87" OrdNmb="1" DeltaGeopoint="0.1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="266" >
+                <spa:Ordinate X="116864.39" Y="414574.03" OrdNmb="1" DeltaGeopoint="0.1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="267" >
+                <spa:Ordinate X="116858.32" Y="414554.98" OrdNmb="1" DeltaGeopoint="0.1" />
+              </spa:SpelementUnit>
+            </spa:SpatialElement>
+            <spa:SpatialElement >
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="500" >
+                <spa:Ordinate X="116588.4" Y="414436.04" OrdNmb="1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="501" >
+                <spa:Ordinate X="116586.54" Y="414435.35" OrdNmb="1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="146" >
+                <spa:Ordinate X="116590.04" Y="414448.77" OrdNmb="1" DeltaGeopoint="0.1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="145" >
+                <spa:Ordinate X="116763.23" Y="414516.88" OrdNmb="1" DeltaGeopoint="0.1" GeopointZacrep="Временный межевой знак" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="144" >
+                <spa:Ordinate X="116763.32" Y="414516.59" OrdNmb="1" DeltaGeopoint="0.1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="502" >
+                <spa:Ordinate X="116757.5" Y="414494.52" OrdNmb="1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="503" >
+                <spa:Ordinate X="116728.32" Y="414484.43" OrdNmb="1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="462" >
+                <spa:Ordinate X="116728.08" Y="414485.11" OrdNmb="1" DeltaGeopoint="0.1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="463" >
+                <spa:Ordinate X="116704.53" Y="414476.75" OrdNmb="1" DeltaGeopoint="0.1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="504" >
+                <spa:Ordinate X="116704.7" Y="414476.26" OrdNmb="1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="505" >
+                <spa:Ordinate X="116657.43" Y="414459.91" OrdNmb="1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="469" >
+                <spa:Ordinate X="116657.39" Y="414460.02" OrdNmb="1" DeltaGeopoint="0.1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="506" >
+                <spa:Ordinate X="116646.73" Y="414456.21" OrdNmb="1" />
+              </spa:SpelementUnit>
+              <spa:SpelementUnit TypeUnit="Точка" SuNmb="500" >
+                <spa:Ordinate X="116588.4" Y="414436.04" OrdNmb="1" />
+              </spa:SpelementUnit>
+            </spa:SpatialElement>
+          </EntitySpatial>
+        </SubParcel>
+        
+      </SubParcels>
+      <EntitySpatial EntSys="ID1" >
+        <spa:SpatialElement >
+          <spa:SpelementUnit TypeUnit="Точка" SuNmb="1" >
+            <spa:Ordinate X="117350.69" Y="413985.9" OrdNmb="1" DeltaGeopoint="0.1" />
+          </spa:SpelementUnit>
+        </spa:SpatialElement>
+        <spa:SpatialElement >
+          <spa:SpelementUnit TypeUnit="Точка" SuNmb="483" >
+            <spa:Ordinate X="117355.37" Y="414321.01" OrdNmb="1" DeltaGeopoint="0.1" />
+          </spa:SpelementUnit>
+        </spa:SpatialElement>
+        <spa:SpatialElement >
+          <spa:SpelementUnit TypeUnit="Точка" SuNmb="488" >
+            <spa:Ordinate X="116981.07" Y="414532.8" OrdNmb="1" DeltaGeopoint="0.1" />
+          </spa:SpelementUnit>
+          <spa:SpelementUnit TypeUnit="Точка" SuNmb="489" >
+            <spa:Ordinate X="116986.88" Y="414552.51" OrdNmb="1" DeltaGeopoint="0.1" />
+          </spa:SpelementUnit>
+        </spa:SpatialElement>
+        <spa:Borders>
+          <spa:Border Spatial="24" Point1="4" Point2="5">
+            <spa:Edge>
+            </spa:Edge>
+          </spa:Border>
+        </spa:Borders>
+      </EntitySpatial>
+      <CadastralCost Value="92544943.43" Unit="383" />
+      <SpecialNote>Для данного земельного участка обеспечен доступ посредством земельного участка (земельных участков) с кадастровым номером (кадастровыми номерами) Земли общего пользования. Сведения о видах разрешенного использовании имеют статус «Актуальные незасвидетельствованные». Право (ограничение права, обременение объекта недвижимости) зарегистрировано на данный объект недвижимости с видами разрешенного использования «Для иных видов использования, характерных для населённых пунктов».</SpecialNote>
+      <AllOffspringParcel>
+        <CadastralNumber>05:42:000017:299</CadastralNumber>
+      </AllOffspringParcel>
+    </Parcel>
+  </Parcels>
+  <CertificationDoc>
+    <cer:Organization>ФГИС ЕГРН</cer:Organization>
+    <cer:Date>2019-03-07</cer:Date>
+    <cer:Number>99/2019/249235755</cer:Number>
+  </CertificationDoc>
+  <Contractors>
+    <Contractor >
+      <FamilyName>Ашуралиев</FamilyName>
+      <FirstName>Кюругли</FirstName>
+      <Patronymic>Ашуралиевич</Patronymic>
+      <NCertificate>05-14-214</NCertificate>
+      <Organization>
+        <Name>ИП</Name>
+      </Organization>
+    </Contractor>
+  </Contractors>
+  <CoordSystems>
+    <spa:CoordSystem Name="МСК05" CsId="ID0" />
+    <spa:CoordSystem Name="МСК-05" CsId="ID1" />
+  </CoordSystems>
+  <eDocument CodeType="112" Version="07" Scope="GKN">
+    <Sender Kod="00.0.4.195"
+    Name="ФГИС ЕГРН"
+    Region="99"
+    Date_Upload="2019-03-07"
+    Appointment="Государственный регистратор"/>
+    <Recipient Kod="00.0.4.111" Name="МИНИСТЕРСТВО ЭКОНОМИЧЕСКОГО РАЗВИТИЯ СТАВРОПОЛЬСКОГО КРАЯ" />
+  </eDocument>
+  <ReestrExtract>
+    <DeclarAttribute ID_KUVI="0"
+    ExtractTypeCode="012000"
+    ExtractTypeText="Выписка из Единого государственного реестра недвижимости об объекте недвижимости"
+    ExtractNumber="99/2019/249235755"
+    ExtractDate="07.03.2019"
+    RequeryNumber="80-78080561"
+    RequeryDate="07.03.2019"
+    ExtractCount="1"
+    NoticeCount="0"
+    RefuseCount="0"
+    Registrator="ФГИС ЕГРН">
+      <ReceivName>МИНИСТЕРСТВО ЭКОНОМИЧЕСКОГО РАЗВИТИЯ СТАВРОПОЛЬСКОГО КРАЯ</ReceivName>
+      <ReceivAdress>не указан</ReceivAdress>
+    </DeclarAttribute>
+    <ExtractObjectRight>
+      <HeadContent>
+        <ID_REC_KUVI>0</ID_REC_KUVI>
+        <Title>ФЕДЕРАЛЬНАЯ СЛУЖБА ГОСУДАРСТВЕННОЙ РЕГИСТРАЦИИ, КАДАСТРА И КАРТОГРАФИИ</Title>
+        <DeptName>ФГИС ЕГРН</DeptName>
+        <ExtractTitle>Выписка из Единого государственного реестра недвижимости об объекте недвижимости</ExtractTitle>
+        <Content>На основании запроса от 07.03.2019 г., поступившего на рассмотрение 07.03.2019 г., сообщаем, что согласно записям Единого государственного реестра недвижимости:</Content>
+      </HeadContent>
+      <ExtractObject>
+        <ObjectRight>
+          <Right RightNumber="1">
+            <Owner >
+              <ID_Subject>50447689905</ID_Subject>
+              <Organization>
+                <Code_SP>007002000000</Code_SP>
+                <Content>Администрация муниципального образования городского округа &quot;город Дербент&quot; Республики Дагестан, ИНН: 0542009356</Content>
+                <Name>Администрация муниципального образования городского округа &quot;город Дербент&quot; Республики Дагестан</Name>
+                <INN>0542009356</INN>
+              </Organization>
+            </Owner>
+            <Registration >
+              <ID_Record>106098320805</ID_Record>
+              <RegNumber>05:42:000017:204-05/001/2018-1</RegNumber>
+              <Type>001001000000</Type>
+              <Name>Собственность, № 05:42:000017:204-05/001/2018-1 от 03.05.2018</Name>
+              <RegDate>03.05.2018</RegDate>
+            </Registration>
+            <NoEncumbrance>не зарегистрировано</NoEncumbrance>
+          </Right>
+          <NoShareHolding>не зарегистрировано</NoShareHolding>
+        </ObjectRight>
+        <RightAssert>данные отсутствуют</RightAssert>
+        <RightClaim>данные отсутствуют</RightClaim>
+        <RightAgainst>данные отсутствуют</RightAgainst>
+        <RightSteal>данные отсутствуют</RightSteal>
+        <WithoutThirdParty>данные отсутствуют</WithoutThirdParty>
+        <InabilityRegWithoutOwner></InabilityRegWithoutOwner>
+        <InabilityRegZU></InabilityRegZU>
+      </ExtractObject>
+      <InfoENK/>
+      <InfoPIK/>
+      <FootContent>
+        <Recipient>МИНИСТЕРСТВО ЭКОНОМИЧЕСКОГО РАЗВИТИЯ СТАВРОПОЛЬСКОГО КРАЯ</Recipient>
+        <ExtractDate>07.03.2019</ExtractDate>
+        <Content></Content>
+      </FootContent>
+    </ExtractObjectRight>
+  </ReestrExtract>
+</KVZU>

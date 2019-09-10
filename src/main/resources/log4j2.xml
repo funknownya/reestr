@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug">
+
+    <ThresholdFilter level="trace"/>
+
+    <Appenders>
+        <Console name="consoleLogger">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} DebugLevel:[%p] Class:[%c{6}]  thread_key: [%X{thread_key}] Method:[%M] Message:[%m]%n"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+
+        <Root level="info">
+            <AppenderRef ref="consoleLogger"/>
+            <AppenderRef ref="rollingLogger"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
+
+
