@@ -1,4 +1,4 @@
-package xml;
+package xml.reestr_extract;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;

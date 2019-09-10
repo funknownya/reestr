@@ -1,4 +1,4 @@
-package xml;
+package xml.reestr_extract;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -34,7 +34,7 @@ public class ExtractObjectRightClass
     public void setInfoEnk(String infoEnk) {
         this.infoEnk = infoEnk;
     }
-    
+
 
     @XmlElement(name = "InfoPIK")
     public String getInfoPik() {

@@ -1,4 +1,7 @@
-package xml;
+package xml.reestr_extract;
+
+import xml.reestr_extract.DeclarAttributeClass;
+import xml.reestr_extract.ExtractObjectRightClass;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

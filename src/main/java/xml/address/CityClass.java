@@ -1,26 +1,15 @@
-package xml;
+package xml.address;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name="Recipient")
-public class RecipientClass
+@XmlRootElement(name="City")
+public class CityClass
 {
-    private String kod;
     private String name;
+    private String type;
 
-
-    public RecipientClass() {
-    }
-
-
-    @XmlAttribute(name = "Kod")
-    public String getKod() {
-        return kod;
-    }
-
-    public void setKod(String kod) {
-        this.kod = kod;
+    public CityClass() {
     }
 
     @XmlAttribute(name = "Name")
@@ -32,5 +21,12 @@ public class RecipientClass
         this.name = name;
     }
 
+    @XmlAttribute(name = "Type")
+    public String getType() {
+        return type;
+    }
 
+    public void setType(String type) {
+        this.type = type;
+    }
 }

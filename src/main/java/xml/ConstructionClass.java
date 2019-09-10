@@ -1,5 +1,8 @@
 package xml;
 
+import xml.address.AddressClass;
+import xml.entity_spatial.EntitySpatialClass;
+
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;

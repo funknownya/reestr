@@ -1,15 +1,26 @@
-package xml;
+package xml.edocument;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name="City")
-public class CityClass
+@XmlRootElement(name="Recipient")
+public class RecipientClass
 {
+    private String kod;
     private String name;
-    private String type;
 
-    public CityClass() {
+
+    public RecipientClass() {
+    }
+
+
+    @XmlAttribute(name = "Kod")
+    public String getKod() {
+        return kod;
+    }
+
+    public void setKod(String kod) {
+        this.kod = kod;
     }
 
     @XmlAttribute(name = "Name")
@@ -21,12 +32,5 @@ public class CityClass
         this.name = name;
     }
 
-    @XmlAttribute(name = "Type")
-    public String getType() {
-        return type;
-    }
 
-    public void setType(String type) {
-        this.type = type;
-    }
 }

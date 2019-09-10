@@ -1,6 +1,10 @@
 package xml;
 
 
+import xml.contractor.ContractorClass;
+import xml.edocument.EDocumentClass;
+import xml.reestr_extract.ReestrExtractClass;
+
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;

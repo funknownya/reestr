@@ -1,4 +1,4 @@
-package xml;
+package xml.edocument;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
