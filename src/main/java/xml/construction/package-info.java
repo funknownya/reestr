@@ -11,7 +11,7 @@
                 @XmlNs(prefix="cer", namespaceURI="urn://x-artefacts-rosreestr-ru/commons/complex-types/certification-doc/1.0"),
                 @XmlNs(prefix="doc", namespaceURI="urn://x-artefacts-rosreestr-ru/commons/complex-types/document-output/4.0.1"),
                 @XmlNs(prefix="ch", namespaceURI="urn://x-artefacts-rosreestr-ru/commons/complex-types/cultural-heritage/2.0.1")
-        }
+        } 
 )
 package xml.construction;
 
