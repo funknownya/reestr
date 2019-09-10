@@ -1,4 +1,4 @@
-package xml;
+package xml.construction;
 
 import xml.address.AddressClass;
 import xml.entity_spatial.EntitySpatialClass;

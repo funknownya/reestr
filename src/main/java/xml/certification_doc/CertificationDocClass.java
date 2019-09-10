@@ -1,4 +1,4 @@
-package xml;
+package xml.certification_doc;
 
 import javax.xml.bind.annotation.*;
 

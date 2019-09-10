@@ -1,7 +1,9 @@
 package xml;
 
 
+import xml.certification_doc.CertificationDocClass;
 import xml.contractor.ContractorClass;
+import xml.coord_system.CoordSystemClass;
 import xml.edocument.EDocumentClass;
 import xml.reestr_extract.ReestrExtractClass;
 
