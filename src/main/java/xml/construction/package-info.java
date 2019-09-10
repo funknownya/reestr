@@ -13,9 +13,6 @@
                 @XmlNs(prefix="ch", namespaceURI="urn://x-artefacts-rosreestr-ru/commons/complex-types/cultural-heritage/2.0.1")
         }
 )
-@XmlJavaTypeAdapters({
-        @XmlJavaTypeAdapter(type = LocalDateTime.class, value = ClassicDateAdapter.class)
-})
 package xml.construction;
 
 import utilities.ClassicDateAdapter;
