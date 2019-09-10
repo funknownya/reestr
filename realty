@@ -297,7 +297,7 @@ COMMENT ON COLUMN public.CONTRACTORS.KVOK_ID IS 'KVOK_ID';
 
 
 
-create user realty_user with password '131384';
+create user realty_user with password '121212';
 CREATE DATABASE realty OWNER realty_user TABLESPACE realty_space ENCODING 'UTF-8' TEMPLATE template0;
 grant all privileges on database realty to realty_user;
 
