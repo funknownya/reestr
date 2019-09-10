@@ -7,6 +7,17 @@
         <Console name="consoleLogger">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} DebugLevel:[%p] Class:[%c{6}]  thread_key: [%X{thread_key}] Method:[%M] Message:[%m]%n"/>
         </Console>
+
+        <RollingFile name="rollingLogger" fileName="logs/app.log" filePattern="logs/app.%d{yyyyMMddHH}.zip">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss,SSS} DebugLevel:[%p] Class:[%c{6}]  thread_key: [%X{thread_key}] Method:[%M] Message:[%m]%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+        </RollingFile>
+
+
     </Appenders>
 
     <Loggers>

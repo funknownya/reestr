@@ -1,5 +1,12 @@
 
+import hibernate.initialize.DatabaseConnectionTask;
+import hibernate.initialize.DatabaseExecutorStorage;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 
@@ -11,7 +18,7 @@ import xml.KvokClass;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 import java.io.*;
-import java.nio.charset.Charset;
+import java.util.concurrent.Future;
 
 public class ReestrApp extends Application
 {
@@ -25,6 +32,26 @@ public class ReestrApp extends Application
     @Override
     public void start(Stage primaryStage)
     {
+
+        // Инициализируем базу данных
+        Boolean isSuccessConnect = Boolean.FALSE;
+        try
+        {
+            DatabaseConnectionTask databaseConnectionTask = new DatabaseConnectionTask();
+            Future<Boolean> databaseConnectionFutureResult = DatabaseExecutorStorage.getInstance().getExecutor().submit(databaseConnectionTask);
+            isSuccessConnect = databaseConnectionFutureResult.get();
+        }
+        catch (Exception e)
+        {
+            logger.error(e.getMessage());
+        }
+        logger.info("Receive isSuccessConnect: " + isSuccessConnect);
+        if(isSuccessConnect.equals(Boolean.FALSE))
+        {
+            logger.info("Receive isSuccessConnect is FALSE");
+            return;
+        }
+
 
         try
         {
@@ -49,18 +76,35 @@ public class ReestrApp extends Application
             logger.error(e.getMessage());
         }
 
-    }
+
+        try
+        {
+            AnchorPane mainAnchorPane = new AnchorPane();
 
 
-    public String inputStreamToString(InputStream is) throws IOException
-    {
-        StringBuilder sb = new StringBuilder();
-        String line;
-        BufferedReader br = new BufferedReader(new InputStreamReader(is));
-        while ((line = br.readLine()) != null) {
-            sb.append(line);
+            AnchorPane.setBottomAnchor(mainAnchorPane, 0.0);
+            AnchorPane.setTopAnchor(mainAnchorPane, 0.0);
+            AnchorPane.setLeftAnchor(mainAnchorPane, 0.0);
+            AnchorPane.setRightAnchor(mainAnchorPane, 0.0);
+
+
+            // размеры экрана
+            Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+            Scene scene = new Scene(mainAnchorPane,
+                    primaryScreenBounds.getWidth(),
+                    primaryScreenBounds.getHeight());
+            primaryStage.setTitle("Reestr");
+            primaryStage.setScene(scene);
+
+
         }
-        br.close();
-        return sb.toString();
+        catch (Exception e)
+        {
+            logger.info("Cant load main_view.fxml");
+            logger.error(e.getMessage());
+        }
+
     }
+
+
 }

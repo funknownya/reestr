@@ -13,11 +13,11 @@
     </properties>
     <root id="root">
       <element id="archive" name="reestr.jar">
-        <element id="module-output" name="reestr" />
         <element id="directory" name="META-INF">
           <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
         </element>
       </element>
+      <element id="module-output" name="Reestr" />
     </root>
   </artifact>
 </component>
