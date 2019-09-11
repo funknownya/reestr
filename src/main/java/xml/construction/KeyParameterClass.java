@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlType;
 public class KeyParameterClass
 {
     private String type;
-    private String value;
+    private Integer value;
 
     public KeyParameterClass() {
     }
@@ -24,11 +24,11 @@ public class KeyParameterClass
     }
 
     @XmlAttribute(name = "Value")
-    public String getValue() {
+    public Integer getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Integer value) {
         this.value = value;
     }
 }

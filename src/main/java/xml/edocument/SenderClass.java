@@ -14,7 +14,7 @@ public class SenderClass
     private String name;
     private String region;
     private LocalDate dateUpload;
-    private String Appointment;
+    private String appointment;
 
     public SenderClass() {
     }
@@ -59,10 +59,10 @@ public class SenderClass
 
     @XmlAttribute(name = "Appointment")
     public String getAppointment() {
-        return Appointment;
+        return appointment;
     }
 
     public void setAppointment(String appointment) {
-        Appointment = appointment;
+        this.appointment = appointment;
     }
 }

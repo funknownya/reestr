@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name="HeadContent")
 public class HeadContentClass
 {
-    private String idRecKuvi;
+    private Integer idRecKuvi;
     private String title;
     private String deptName;
     private String extractTitle;
@@ -16,11 +16,11 @@ public class HeadContentClass
     }
 
     @XmlElement(name = "ID_REC_KUVI")
-    public String getIdRecKuvi() {
+    public Integer getIdRecKuvi() {
         return idRecKuvi;
     }
 
-    public void setIdRecKuvi(String idRecKuvi) {
+    public void setIdRecKuvi(Integer idRecKuvi) {
         this.idRecKuvi = idRecKuvi;
     }
 

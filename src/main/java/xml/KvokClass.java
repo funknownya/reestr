@@ -17,7 +17,7 @@ import java.util.List;
         "certificationDocClass",
         "contractorClassList",
         "coordSystemClassList",
-        "eDocumentClass",
+        "edocumentClass",
         "reestrExtractClass"})
 public class KvokClass
 {
@@ -25,7 +25,7 @@ public class KvokClass
     private CertificationDocClass certificationDocClass;
     private List<ContractorClass> contractorClassList = new ArrayList<ContractorClass>();
     private List<CoordSystemClass> coordSystemClassList = new ArrayList<CoordSystemClass>();
-    private EDocumentClass eDocumentClass;
+    private EDocumentClass edocumentClass;
     private ReestrExtractClass reestrExtractClass;
 
 
@@ -75,12 +75,12 @@ public class KvokClass
     }
 
     @XmlElement(name = "eDocument")
-    public EDocumentClass geteDocumentClass() {
-        return eDocumentClass;
+    public EDocumentClass getEdocumentClass() {
+        return edocumentClass;
     }
 
-    public void seteDocumentClass(EDocumentClass eDocumentClass) {
-        this.eDocumentClass = eDocumentClass;
+    public void setEdocumentClass(EDocumentClass edocumentClass) {
+        this.edocumentClass = edocumentClass;
     }
 
     @XmlElement(name = "ReestrExtract")
@@ -91,4 +91,7 @@ public class KvokClass
     public void setReestrExtractClass(ReestrExtractClass reestrExtractClass) {
         this.reestrExtractClass = reestrExtractClass;
     }
+
+
+
 }

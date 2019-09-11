@@ -1,36 +1,79 @@
-package xml.reestr_extract;
+package hibernate.pojo;
 
-import utilities.ExtractDateAdapter;
-
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
-@XmlRootElement(name="DeclarAttribute")
-public class DeclarAttributeClass
+/**
+ * @author Farid Mukhametshin
+ */
+
+@Entity
+@Table(name = "DECLAR_ATTRIBUTE", schema = "public", catalog = "realty")
+public class DeclarAttribute
 {
+    @Id
+    @SequenceGenerator(name = "declar_attribute_id_generator", sequenceName = "declar_attribute_id_sq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "declar_attribute_id_generator")
+    @Column(name = "DECLAR_ATTRIBUTE_ID", nullable=false)
+    private Integer declarAttributeId;
+
+
+    @Column(name = "ID_KUVI", nullable=false)
     private Integer idKuvi;
+
+    @Column(name = "EXTRACT_TYPE_CODE", nullable=false)
     private String extractTypeCode;
+
+    @Column(name = "EXTRACT_TYPE_TEXT", nullable=false)
     private String extractTypeText;
+
+    @Column(name = "EXTRACT_NUMBER", nullable=false)
     private String extractNumber;
+
+    @Column(name = "EXTRACT_DATE", nullable=false)
     private LocalDate extractDate;
+
+    @Column(name = "REQUERY_NUMBER", nullable=false)
     private String requeryNumber;
+
+    @Column(name = "REQUERY_DATE", nullable=false)
     private LocalDate requeryDate;
+
+    @Column(name = "EXTRACT_COUNT", nullable=false)
     private Integer extractCount;
+
+    @Column(name = "NOTICE_COUNT", nullable=false)
     private Integer noticeCount;
+
+    @Column(name = "REFUSE_COUNT", nullable=false)
     private Integer refuseCount;
+
+    @Column(name = "REGISTRATOR", nullable=false)
     private String registrator;
 
-
+    @Column(name = "RECEIV_NAME", nullable=false)
     private String receivName;
-    private String receivAdress;
 
-    public DeclarAttributeClass() {
+    @Column(name = "RECEIV_ADDRESS", nullable=false)
+    private String receivAddress;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL,mappedBy = "declarAttributeId")
+    private List<ReestrExtract> reestrExtractList = new ArrayList<ReestrExtract>();
+
+
+    public DeclarAttribute() {
     }
 
-    @XmlAttribute(name = "ID_KUVI")
+    public Integer getDeclarAttributeId() {
+        return declarAttributeId;
+    }
+
+    public void setDeclarAttributeId(Integer declarAttributeId) {
+        this.declarAttributeId = declarAttributeId;
+    }
+
     public Integer getIdKuvi() {
         return idKuvi;
     }
@@ -39,7 +82,6 @@ public class DeclarAttributeClass
         this.idKuvi = idKuvi;
     }
 
-    @XmlAttribute(name = "ExtractTypeCode")
     public String getExtractTypeCode() {
         return extractTypeCode;
     }
@@ -48,7 +90,6 @@ public class DeclarAttributeClass
         this.extractTypeCode = extractTypeCode;
     }
 
-    @XmlAttribute(name = "ExtractTypeText")
     public String getExtractTypeText() {
         return extractTypeText;
     }
@@ -57,7 +98,6 @@ public class DeclarAttributeClass
         this.extractTypeText = extractTypeText;
     }
 
-    @XmlAttribute(name = "ExtractNumber")
     public String getExtractNumber() {
         return extractNumber;
     }
@@ -66,8 +106,6 @@ public class DeclarAttributeClass
         this.extractNumber = extractNumber;
     }
 
-    @XmlJavaTypeAdapter(value = ExtractDateAdapter.class)
-    @XmlAttribute(name = "ExtractDate", required = true)
     public LocalDate getExtractDate() {
         return extractDate;
     }
@@ -76,7 +114,6 @@ public class DeclarAttributeClass
         this.extractDate = extractDate;
     }
 
-    @XmlAttribute(name = "RequeryNumber")
     public String getRequeryNumber() {
         return requeryNumber;
     }
@@ -85,8 +122,6 @@ public class DeclarAttributeClass
         this.requeryNumber = requeryNumber;
     }
 
-    @XmlJavaTypeAdapter(value = ExtractDateAdapter.class)
-    @XmlAttribute(name = "RequeryDate", required = true)
     public LocalDate getRequeryDate() {
         return requeryDate;
     }
@@ -95,7 +130,6 @@ public class DeclarAttributeClass
         this.requeryDate = requeryDate;
     }
 
-    @XmlAttribute(name = "ExtractCount")
     public Integer getExtractCount() {
         return extractCount;
     }
@@ -104,7 +138,6 @@ public class DeclarAttributeClass
         this.extractCount = extractCount;
     }
 
-    @XmlAttribute(name = "NoticeCount")
     public Integer getNoticeCount() {
         return noticeCount;
     }
@@ -113,7 +146,6 @@ public class DeclarAttributeClass
         this.noticeCount = noticeCount;
     }
 
-    @XmlAttribute(name = "RefuseCount")
     public Integer getRefuseCount() {
         return refuseCount;
     }
@@ -122,7 +154,6 @@ public class DeclarAttributeClass
         this.refuseCount = refuseCount;
     }
 
-    @XmlAttribute(name = "Registrator")
     public String getRegistrator() {
         return registrator;
     }
@@ -131,7 +162,6 @@ public class DeclarAttributeClass
         this.registrator = registrator;
     }
 
-    @XmlElement(name = "ReceivName")
     public String getReceivName() {
         return receivName;
     }
@@ -140,12 +170,11 @@ public class DeclarAttributeClass
         this.receivName = receivName;
     }
 
-    @XmlElement(name = "ReceivAdress")
-    public String getReceivAdress() {
-        return receivAdress;
+    public String getReceivAddress() {
+        return receivAddress;
     }
 
-    public void setReceivAdress(String receivAdress) {
-        this.receivAdress = receivAdress;
+    public void setReceivAddress(String receivAddress) {
+        this.receivAddress = receivAddress;
     }
 }

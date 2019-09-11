@@ -18,12 +18,17 @@ import org.apache.logging.log4j.Logger;
 import xml.KvokClass;
 import xml.address.AddressClass;
 import xml.address.CityClass;
+import xml.certification_doc.CertificationDocClass;
 import xml.construction.ConstructionClass;
 import xml.construction.ExploitationCharClass;
 import xml.construction.KeyParameterClass;
+import xml.edocument.EDocumentClass;
+import xml.edocument.RecipientClass;
+import xml.edocument.SenderClass;
 import xml.entity_spatial.EntitySpatialClass;
 import xml.entity_spatial.OrdinateClass;
 import xml.entity_spatial.SpelementUnitClass;
+import xml.reestr_extract.*;
 
 
 import javax.xml.bind.JAXBContext;
@@ -89,22 +94,22 @@ public class ReestrApp extends Application
                 String cadastralNumber = constructionClass.getCadastralNumber();
                 String state = constructionClass.getState();
                 LocalDate dateCreated = constructionClass.getDateCreated();
-                String yearBuilt = constructionClass.getExploitationCharClass().getYearBuilt();
-                String addressOkato = constructionClass.getAddressClass().getOkato();
-                String addressKladr = constructionClass.getAddressClass().getKladr();
-                String addressRegion = constructionClass.getAddressClass().getRegion();
-                String addressNote = constructionClass.getAddressClass().getNote();
-                CityClass cityClass = constructionClass.getAddressClass().getCityClass();
+                ExploitationCharClass exploitationCharClass = constructionClass.getExploitationCharClass();
+                String yearBuilt = exploitationCharClass.getYearBuilt();
+                AddressClass addressClass = constructionClass.getAddressClass();
+                String addressOkato = addressClass.getOkato();
+                String addressKladr = addressClass.getKladr();
+                String addressRegion = addressClass.getRegion();
+                String addressNote = addressClass.getNote();
+                CityClass cityClass = addressClass.getCityClass();
                 String cityName = cityClass.getName();
                 String cityType = cityClass.getType();
-                List<String> cadastralBlockList = constructionClass.getCadastralBlockList();
                 String objectType = constructionClass.getObjectType();
                 String name = constructionClass.getName();
                 String assignationName = constructionClass.getAssignationName();
-                ExploitationCharClass exploitationCharClass= constructionClass.getExploitationCharClass();
-                List<KeyParameterClass> keyParameterClassList = constructionClass.getKeyParameterClassList();
-                AddressClass addressClass = constructionClass.getAddressClass();
                 EntitySpatialClass entitySpatialClass = constructionClass.getEntitySpatialClass();
+                List<String> cadastralBlockList = constructionClass.getCadastralBlockList();
+                List<KeyParameterClass> keyParameterClassList = constructionClass.getKeyParameterClassList();
 
                 String entSys = entitySpatialClass.getEntSys();
                 List<SpelementUnitClass> spelementUnitClassList = entitySpatialClass.getSpelementUnitClassList();
@@ -177,6 +182,170 @@ public class ReestrApp extends Application
                     ICadastralBlockService cadastralBlockService = new CadastralBlockService();
                     cadastralBlockService.insertCadastralBlock(cadastralBlockObject);
                 }
+
+                // insert KeyParameterClass
+                for(KeyParameterClass keyParameterClass : keyParameterClassList)
+                {
+                    String type = keyParameterClass.getType();
+                    Integer value = keyParameterClass.getValue();
+
+                    KeyParameter keyParameterObject = new KeyParameter();
+                    keyParameterObject.setType(type);
+                    keyParameterObject.setValue(value);
+                    keyParameterObject.setConstructionId(constructionObject);
+                    IKeyParameterService keyParameterService = new KeyParameterService();
+                    keyParameterService.insertKeyParameter(keyParameterObject);
+                }
+
+
+                CertificationDocClass certificationDocClass = kvokClassObject.getCertificationDocClass();
+                String certificationDocOrganization = certificationDocClass.getOrganization();
+                LocalDate certificationDocDate = certificationDocClass.getDate();
+                String certificationDocNumber = certificationDocClass.getNumber();
+
+                // insert CertificationDoc
+                CertificationDoc certificationDocObject = new CertificationDoc();
+                certificationDocObject.setOrganization(certificationDocOrganization);
+                certificationDocObject.setDate(certificationDocDate);
+                certificationDocObject.setNumber(certificationDocNumber);
+                ICertificationDocService certificationDocService = new CertificationDocService();
+                certificationDocService.insertCertificationDoc(certificationDocObject);
+
+
+                EDocumentClass eDocumentClass = kvokClassObject.getEdocumentClass();
+                String edocumentCodeType = eDocumentClass.getCodeType();
+                String edocumentVersion = eDocumentClass.getVersion();
+                String edocumentScope = eDocumentClass.getScope();
+                SenderClass senderClass = eDocumentClass.getSenderClass();
+                String senderKod = senderClass.getKod();
+                String senderName = senderClass.getName();
+                String senderRegion = senderClass.getRegion();
+                LocalDate senderDateUpload = senderClass.getDateUpload();
+                String senderAppointment = senderClass.getAppointment();
+                RecipientClass recipientClass = eDocumentClass.getRecipientClass();
+                String recipientKod = recipientClass.getKod();
+                String recipientName = recipientClass.getName();
+
+                // insert Sender
+                Sender senderObject = new Sender();
+                senderObject.setKod(senderKod);
+                senderObject.setName(senderName);
+                senderObject.setRegion(senderRegion);
+                senderObject.setDateUpload(senderDateUpload);
+                senderObject.setAppointment(senderAppointment);
+                ISenderService senderService = new SenderService();
+                senderService.insertSender(senderObject);
+
+                // insert Recipient
+                Recipient recipientObject = new Recipient();
+                recipientObject.setKod(recipientKod);
+                recipientObject.setName(recipientName);
+                IRecipientService recipientService = new RecipientService();
+                recipientService.insertRecipient(recipientObject);
+
+                // insert EDocument
+                EDocument edocumentObject = new EDocument();
+                edocumentObject.setCodeType(edocumentCodeType);
+                edocumentObject.setVersion(edocumentVersion);
+                edocumentObject.setScope(edocumentScope);
+                edocumentObject.setSenderId(senderObject);
+                edocumentObject.setRecipientId(recipientObject);
+                IEDocumentService edocumentService = new EDocumentService();
+                edocumentService.insertEDocument(edocumentObject);
+
+
+                ReestrExtractClass reestrExtractClass = kvokClassObject.getReestrExtractClass();
+                DeclarAttributeClass declarAttributeClass = reestrExtractClass.getDeclarAttributeClass();
+                Integer idKuvi = declarAttributeClass.getIdKuvi();
+                String extractTypeCode = declarAttributeClass.getExtractTypeCode();
+                String extractTypeText = declarAttributeClass.getExtractTypeText();
+                String extractNumber = declarAttributeClass.getExtractNumber();
+                LocalDate extractDate = declarAttributeClass.getExtractDate();
+                String requeryNumber = declarAttributeClass.getRequeryNumber();
+                LocalDate requeryDate = declarAttributeClass.getRequeryDate();
+                Integer extractCount = declarAttributeClass.getExtractCount();
+                Integer noticeCount = declarAttributeClass.getNoticeCount();
+                Integer refuseCount = declarAttributeClass.getRefuseCount();
+                String registrator = declarAttributeClass.getRegistrator();
+                String receivName = declarAttributeClass.getReceivName();
+                String receivAddress = declarAttributeClass.getReceivAdress();
+
+                // insert DeclarAttribute
+                DeclarAttribute declarAttributeObject = new DeclarAttribute();
+                declarAttributeObject.setIdKuvi(idKuvi);
+                declarAttributeObject.setExtractTypeCode(extractTypeCode);
+                declarAttributeObject.setExtractTypeText(extractTypeText);
+                declarAttributeObject.setExtractNumber(extractNumber);
+                declarAttributeObject.setExtractDate(extractDate);
+                declarAttributeObject.setRequeryNumber(requeryNumber);
+                declarAttributeObject.setRequeryDate(requeryDate);
+                declarAttributeObject.setExtractCount(extractCount);
+                declarAttributeObject.setNoticeCount(noticeCount);
+                declarAttributeObject.setRefuseCount(refuseCount);
+                declarAttributeObject.setRegistrator(registrator);
+                declarAttributeObject.setReceivName(receivName);
+                declarAttributeObject.setReceivAddress(receivAddress);
+                IDeclarAttributeService declarAttributeService = new DeclarAttributeService();
+                declarAttributeService.insertDeclarAttribute(declarAttributeObject);
+
+
+                ExtractObjectRightClass extractObjectRightClass = reestrExtractClass.getExtractObjectRightClass();
+                String infoEnk = extractObjectRightClass.getInfoEnk();
+                String infoPik = extractObjectRightClass.getInfoPik();
+                HeadContentClass headContentClass = extractObjectRightClass.getHeadContentClass();
+                Integer headIdRecKuvi = headContentClass.getIdRecKuvi();
+                String headTitle = headContentClass.getTitle();
+                String headDeptName = headContentClass.getDeptName();
+                String headExtractTitle = headContentClass.getExtractTitle();
+                String headContent = headContentClass.getContent();
+                FootContentClass footContentClass = extractObjectRightClass.getFootContentClass();
+                String footRecipient = footContentClass.getRecipient();
+                LocalDate footExtractDate = footContentClass.getExtractDate();
+                String footContent = footContentClass.getContent();
+
+                // insert HeadContent
+                HeadContent headContentObject = new HeadContent();
+                headContentObject.setIdRecKuvi(headIdRecKuvi);
+                headContentObject.setTitle(headTitle);
+                headContentObject.setDeptName(headDeptName);
+                headContentObject.setExtractTitle(headExtractTitle);
+                headContentObject.setContent(headContent);
+                IHeadContentService headContentService = new HeadContentService();
+                headContentService.insertHeadContent(headContentObject);
+
+                // insert FootContent
+                FootContent footContentObject = new FootContent();
+                footContentObject.setRecipient(footRecipient);
+                footContentObject.setExtractDate(footExtractDate);
+                footContentObject.setContent(headContent);
+                IFootContentService footContentService = new FootContentService();
+                footContentService.insertFootContent(footContentObject);
+
+                // insert FootContent
+                ExtractObjectRight extractObjectRightObject = new ExtractObjectRight();
+                extractObjectRightObject.setInfoEnk(infoEnk);
+                extractObjectRightObject.setInfoPik(infoPik);
+                extractObjectRightObject.setHeadContentId(headContentObject);
+                extractObjectRightObject.setFootContentId(footContentObject);
+                IExtractObjectRightService extractObjectRightService = new ExtractObjectRightService();
+                extractObjectRightService.insertExtractObjectRight(extractObjectRightObject);
+
+
+                // insert ReestrExtract
+                ReestrExtract reestrExtractObject = new ReestrExtract();
+                reestrExtractObject.setDeclarAttributeId(declarAttributeObject);
+                reestrExtractObject.setExtractObjectRightId(extractObjectRightObject);
+                IReestrExtractService reestrExtractService = new ReestrExtractService();
+                reestrExtractService.insertReestrExtract(reestrExtractObject);
+
+
+                Kvoks kvokObject = new Kvoks();
+                kvokObject.setConstructionId(constructionObject);
+                kvokObject.setEdocumentId(edocumentObject);
+                kvokObject.setCertificationDocId(certificationDocObject);
+                kvokObject.setReestrExtractId(reestrExtractObject);
+                IKvoksService kvoksService = new KvoksService();
+                kvoksService.insertKvok(kvokObject);
             }
 
         }

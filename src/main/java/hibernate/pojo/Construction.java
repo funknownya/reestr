@@ -67,6 +67,12 @@ public class Construction
     @OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL,mappedBy = "constructionId")
     private List<CadastralBlock> cadastralBlockList = new ArrayList<CadastralBlock>();
 
+    @OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL,mappedBy = "constructionId")
+    private List<KeyParameter> keyParameterList = new ArrayList<KeyParameter>();
+
+    @OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL,mappedBy = "constructionId")
+    private List<Kvoks> kvokList = new ArrayList<Kvoks>();
+
     public Construction() {
     }
 
