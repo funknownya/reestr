@@ -27,8 +27,8 @@ public class DatabaseConnectionTask implements Callable<Boolean>
 
         // создаем настройку подключения по Hibernate
         // инициализирует некоторые поля подключения к БД: логин, пароль и прочее
-        isSuccessConnect = HibernateSessionFactory.initialize();
-                
+        isSuccessConnect = JpaSessionFactory.jpaInitialize();
+
         return isSuccessConnect;
     }
 }

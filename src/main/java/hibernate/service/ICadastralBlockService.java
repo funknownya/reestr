@@ -5,19 +5,19 @@
  */
 package hibernate.service;
 
-import hibernate.pojo.EntitySpatial;
+import hibernate.pojo.CadastralBlock;
+import hibernate.pojo.City;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**
  * @author Farid Mukhametshin
  */
-public interface EntitySpatialDao
+public interface ICadastralBlockService
 {
-    List<EntitySpatial> selectAll();
+    List<CadastralBlock> selectAll();
 
-    Boolean insertEntitySpatial(String entSys);
+    Boolean insertCadastralBlock(CadastralBlock cadastralBlockObject);
 
 
     

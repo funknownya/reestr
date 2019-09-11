@@ -1,13 +1,18 @@
 package xml.reestr_extract;
 
+import utilities.ExtractDateAdapter;
+
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.time.LocalDate;
 
 @XmlRootElement(name="FootContent")
 public class FootContentClass {
 
     private String recipient;
-    private String extractDate;
+    private LocalDate extractDate;
     private String content;
 
     public FootContentClass() {
@@ -23,12 +28,13 @@ public class FootContentClass {
         this.recipient = recipient;
     }
 
-    @XmlElement(name = "ExtractDate")
-    public String getExtractDate() {
+    @XmlJavaTypeAdapter(value = ExtractDateAdapter.class)
+    @XmlElement(name = "ExtractDate", required = true)
+    public LocalDate getExtractDate() {
         return extractDate;
     }
 
-    public void setExtractDate(String extractDate) {
+    public void setExtractDate(LocalDate extractDate) {
         this.extractDate = extractDate;
     }
 

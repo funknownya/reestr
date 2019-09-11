@@ -58,7 +58,7 @@ public class ConstructionClass
         this.state = state;
     }
 
-    @XmlAttribute(name = "DateCreated", required=true)
+    @XmlAttribute(name = "DateCreated", required = true)
     @XmlJavaTypeAdapter(value = ClassicDateAdapter.class)
     public LocalDate getDateCreated() {
         return dateCreated;

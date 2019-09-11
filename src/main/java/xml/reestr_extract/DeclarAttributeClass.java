@@ -1,8 +1,12 @@
 package xml.reestr_extract;
 
+import utilities.ExtractDateAdapter;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.time.LocalDate;
 
 @XmlRootElement(name="DeclarAttribute")
 public class DeclarAttributeClass
@@ -11,9 +15,9 @@ public class DeclarAttributeClass
     private String extractTypeCode;
     private String extractTypeText;
     private String extractNumber;
-    private String extractDate;
+    private LocalDate extractDate;
     private String requeryNumber;
-    private String requeryDate;
+    private LocalDate requeryDate;
     private String extractCount;
     private String noticeCount;
     private String refuseCount;
@@ -62,12 +66,13 @@ public class DeclarAttributeClass
         this.extractNumber = extractNumber;
     }
 
-    @XmlAttribute(name = "ExtractDate")
-    public String getExtractDate() {
+    @XmlJavaTypeAdapter(value = ExtractDateAdapter.class)
+    @XmlAttribute(name = "ExtractDate", required = true)
+    public LocalDate getExtractDate() {
         return extractDate;
     }
 
-    public void setExtractDate(String extractDate) {
+    public void setExtractDate(LocalDate extractDate) {
         this.extractDate = extractDate;
     }
 
@@ -80,12 +85,13 @@ public class DeclarAttributeClass
         this.requeryNumber = requeryNumber;
     }
 
-    @XmlAttribute(name = "RequeryDate")
-    public String getRequeryDate() {
+    @XmlJavaTypeAdapter(value = ExtractDateAdapter.class)
+    @XmlAttribute(name = "RequeryDate", required = true)
+    public LocalDate getRequeryDate() {
         return requeryDate;
     }
 
-    public void setRequeryDate(String requeryDate) {
+    public void setRequeryDate(LocalDate requeryDate) {
         this.requeryDate = requeryDate;
     }
 

@@ -6,14 +6,17 @@
 package hibernate.service;
 
 
-import hibernate.initialize.HibernateSessionFactory;
+
+import hibernate.initialize.JpaSessionFactory;
 import hibernate.pojo.EntitySpatial;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,26 +25,25 @@ import java.util.List;
  *
  * @author Farid Mukhametshin
  */
-public class EntitySpatialDaoImpl implements EntitySpatialDao
+public class EntitySpatialService implements IEntitySpatialService
 {
-    private static final Logger logger = LogManager.getLogger(EntitySpatialDaoImpl.class.getName());
+    private static final Logger logger = LogManager.getLogger(EntitySpatialService.class.getName());
+    private EntityManagerFactory emf = JpaSessionFactory.getEntityManagerFactory();
 
     @Override
     public List<EntitySpatial> selectAll()
     {
         List<EntitySpatial> entitySpatialList = new ArrayList<EntitySpatial>();;
-        
-        Session session = HibernateSessionFactory.getSessionFactory().openSession();
-        Transaction transaction = null;
+
+        EntityManager em = emf.createEntityManager();
         try 
         {
-            transaction = session.beginTransaction();
-            
-            Query query = session.createQuery("FROM EntitySpatial");
+            em.getTransaction().begin();
+            Query query = em.createQuery("FROM EntitySpatial");
 
-            entitySpatialList = query.list();
-            
-            transaction.commit();
+            entitySpatialList = query.getResultList();
+
+            em.getTransaction().commit();
         } 
         catch (Exception e)
         { 
@@ -49,7 +51,7 @@ public class EntitySpatialDaoImpl implements EntitySpatialDao
         } 
         finally
         {
-            session.close();
+            em.close();
         }
         
         return entitySpatialList;
@@ -61,26 +63,18 @@ public class EntitySpatialDaoImpl implements EntitySpatialDao
     // 0 - нет ошибок
     // 1 - есть ошибка
     @Override
-    public Boolean insertEntitySpatial(String entSys)
+    public Boolean insertEntitySpatial(EntitySpatial entitySpatialObject)
     {
         Boolean isSuccess = Boolean.FALSE;
-        
-        Session session = HibernateSessionFactory.getSessionFactory().openSession();
-        Transaction transaction = null;
+
+        EntityManager em = emf.createEntityManager();
         try 
         {
-            transaction = session.beginTransaction();
+            em.getTransaction().begin();
 
-            EntitySpatial entitySpatialObject = new EntitySpatial();
-            entitySpatialObject.setEntSys(entSys);
+            em.persist(entitySpatialObject);
 
-            
-            
-            session.save(entitySpatialObject);
-            session.flush();
-            session.clear();
-
-            transaction.commit();
+            em.getTransaction().commit();
 
             isSuccess = Boolean.TRUE;
 
@@ -91,12 +85,11 @@ public class EntitySpatialDaoImpl implements EntitySpatialDao
             isSuccess = Boolean.FALSE;
 
             logger.error(e.getMessage());
-            
-            transaction.rollback();
+
         }
         finally
         {
-            session.close();
+            em.close();
         }
         
         return isSuccess;

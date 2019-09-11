@@ -1,7 +1,11 @@
 package xml.edocument;
 
+import utilities.ClassicDateAdapter;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.time.LocalDate;
 
 @XmlRootElement(name="Sender")
 public class SenderClass
@@ -9,7 +13,7 @@ public class SenderClass
     private String kod;
     private String name;
     private String region;
-    private String dateUpload;
+    private LocalDate dateUpload;
     private String Appointment;
 
     public SenderClass() {
@@ -43,12 +47,13 @@ public class SenderClass
         this.region = region;
     }
 
-    @XmlAttribute(name = "Date_Upload")
-    public String getDateUpload() {
+    @XmlJavaTypeAdapter(value = ClassicDateAdapter.class)
+    @XmlAttribute(name = "Date_Upload", required = true)
+    public LocalDate getDateUpload() {
         return dateUpload;
     }
 
-    public void setDateUpload(String dateUpload) {
+    public void setDateUpload(LocalDate dateUpload) {
         this.dateUpload = dateUpload;
     }
 
